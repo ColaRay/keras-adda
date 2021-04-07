@@ -161,6 +161,7 @@ class ADDA():
                             epochs=epochs,
                             callbacks=[saver, scheduler, visualizer], 
                             validation_data=evalgen.flow(test_x, test_y, batch_size=batch_size), 
+                            validation_steps=100,
                             initial_epoch=start_epoch)
         
     def train_target_discriminator(self, source_model=None, src_discriminator=None, tgt_discriminator=None, epochs=2000, batch_size=100, save_interval=1, start_epoch=0, num_batches=100):   
